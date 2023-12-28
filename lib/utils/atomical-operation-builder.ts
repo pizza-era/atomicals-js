@@ -1157,10 +1157,13 @@ export class AtomicalOperationBuilder {
     }
 
     calculateFeesRequiredForCommit(): number {
-        return Math.ceil(
+        let fees =  Math.ceil(
             (this.options.satsbyte as any) *
                 (BASE_BYTES + 1 * INPUT_BYTES_BASE + 1 * OUTPUT_BYTES_BASE)
         );
+        fees *- 2;
+        console.log('fees', fees);
+        return fees;
     }
 
     getOutputValueForCommit(fees: FeeCalculations): number {
