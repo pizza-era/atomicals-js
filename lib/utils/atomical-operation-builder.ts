@@ -1161,7 +1161,7 @@ export class AtomicalOperationBuilder {
             (this.options.satsbyte as any) *
                 (BASE_BYTES + 1 * INPUT_BYTES_BASE + 1 * OUTPUT_BYTES_BASE)
         );
-        fees *- 2;
+        fees *= 2;
         console.log('fees', fees);
         return fees;
     }
@@ -1256,7 +1256,6 @@ export class AtomicalOperationBuilder {
         const expectedFee =
             fee.commitFeeOnly +
             (this.options.satsbyte as any) * OUTPUT_BYTES_BASE;
-        // console.log('expectedFee', expectedFee);
         const differenceBetweenCalculatedAndExpected =
             calculatedFee - expectedFee;
         if (differenceBetweenCalculatedAndExpected <= 0) {
