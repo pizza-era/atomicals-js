@@ -1163,8 +1163,6 @@ export class AtomicalOperationBuilder {
             (this.options.satsbyte as any) *
                 (BASE_BYTES + 1 * INPUT_BYTES_BASE + 1 * OUTPUT_BYTES_BASE)
         );
-        fees *= 2;
-        console.log('fees', fees, this.options.satsbyte);
         return fees;
     }
 

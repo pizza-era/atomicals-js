@@ -1563,7 +1563,7 @@ program.command('mint-dft')
   .option('--rbf', 'Whether to enable RBF for transactions.')
   .option('--initialowner <string>', 'Assign claimed tokens into this address')
   .option('--funding <string>', 'Use wallet alias wif key to be used for funding and change')
-  .option('--satsbyte <number>', 'Satoshis per byte in fees', '15')
+  .option('--satsbyte <number>', 'Satoshis per byte in fees', '150')
   .option('--disablechalk', 'Whether to disable the real-time chalked logging of each hash for Bitwork mining. Improvements mining performance to set this flag')
   .action(async (ticker, options) => {
     try {
@@ -1574,7 +1574,7 @@ program.command('mint-dft')
       let walletRecord = resolveWalletAliasNew(walletInfo, options.initialowner, walletInfo.primary);
       let fundingRecord = resolveWalletAliasNew(walletInfo, options.funding, walletInfo.funding);
       const sats = parseInt(options.satsbyte);
-      console.log('sats', sats, options.satsbyte)
+
       const result: any = await atomicals.mintDftInteractive({
         rbf: options.rbf,
         satsbyte: parseInt(options.satsbyte),
