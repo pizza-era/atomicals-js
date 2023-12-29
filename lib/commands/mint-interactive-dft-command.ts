@@ -24,6 +24,7 @@ export class MintInteractiveDftCommand implements CommandInterface {
     private fundingWIF: string,
   ) {
     this.options = checkBaseRequestOptions(this.options)
+    console.log('baseOptions', this.options)
     this.ticker = this.ticker.startsWith('$') ? this.ticker.substring(1) : this.ticker;
   }
   async run(): Promise<any> {

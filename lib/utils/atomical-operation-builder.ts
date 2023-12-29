@@ -273,6 +273,8 @@ export class AtomicalOperationBuilder {
                 throw new Error("dmtOptions required for dmt type");
             }
         }
+
+        console.log('satsbyter', this.options.satsbyte)
     }
 
     setRBF(value: boolean) {
